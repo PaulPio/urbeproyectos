@@ -37,9 +37,12 @@
 *.a
 *.lib
 
+*.docx
+*.pdf
+
 # Executables
 *.exe
 *.out
 *.app
-
+*.vscode
 # End of https://www.toptal.com/developers/gitignore/api/c++
