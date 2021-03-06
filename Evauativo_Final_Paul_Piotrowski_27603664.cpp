@@ -33,7 +33,7 @@ main (){
 			break;}
           total_notas = total_notas + notas;
     		}
-		if (notas>0 && notas <20)  {
+		if (notas>0 && notas <=20)  {
         prom_notas = total_notas / count;
         cout << "Se agregaron " << count << " para promediar en el programa\n";
         cout << "El promedio de las notas de los estudiantes fue de " << prom_notas << endl;
