@@ -5,15 +5,27 @@ using namespace std;
 
 main() {
 	//Se declaran las variables
-		string nombre, apellido, sexo, cedula;
-		int dia_nac, est_num, mes_nac, ano_nac, promedio, ano_actual = 2021, opcion, edad;
+		string nombre, apellido, sexo, cedula, process;
+		int dia_nac, est_num, mes_nac, ano_nac, promedio, ano_act = 2021, opcion, edad, dia_act = 8, mes_act = 3, dia_e, mes_e;
 		bool continuar = true;
 		int o=0, z= 0, u = 0;
 		int lista_est[100][100];
 		string lista_est_string[100][100];
+		cout << "Bienvenido al programa usuario\n";
+		//PAra saber la fecha actual 
+		
+		cout << "La fecha del dia de hoy es: " << dia_act << "/" << mes_act << "/" << "/" << ano_act << "\nSi desea cambiar la fecha oprima S, sino presione cualquier otra tecla\n";
+		cin >> process;
+		if (process == "S"){
+		cout << "Para saber la fecha ingrese: \n";
+		cout << "Ingrese Ano Actual: \n";   cin >> ano_act;
+		cout << "Ingrese Mes Actual: \n";   cin >> mes_act;
+		cout << "Ingrese Dia Actual: \n";  cin >> dia_act;
+		}
      //Se realiza el programa con un bucle do-while para asegurarse de que corra por lo menos una vez              
 	do{
-		cout << "Bienvenido al programa usuario, elija una opcion\n1.Registro de estudiantes\n2.Editar estudiantes\n3.Estadistica\n4.Salir del Programa\n";
+
+		cout << "Elija una opcion\n1.Registro de estudiantes\n2.Editar estudiantes\n3.Estadistica\n4.Salir del Programa\n";
 		cin >> opcion;
 		system("cls"); 
 			switch(opcion){
@@ -50,8 +62,20 @@ main() {
 						
 						cout << "Ingrese ano de nacimiento del estudiante: \n";
 						cin >> ano_nac;
-			
-						edad= ano_actual - ano_nac;
+					
+						//Para calcular la edad con dia, mes y años
+					
+						if ( dia_act < dia_nac  ){  
+							dia_act = dia_act + 30; 
+					        mes_act = mes_act - 1; 
+					    }
+					    if( mes_act < mes_nac )
+					    {    
+					    	mes_act = mes_act +12;
+					        ano_act = ano_act - 1 ; 
+					    }
+					    	
+					    edad= ano_act - ano_nac;
 						
 						cout << "Ingrese promedio del estudiante: \n";
 						cin >> promedio;
@@ -88,7 +112,7 @@ main() {
 					cout << "Escriba un numero para escoger el estudiante a editar: \n";
 					cin >> z;
 					system("cls");
-					int choice;
+					int choice, edad_2;
 					//Se escoge la opcion que mas desee
 					cout << "Que desea cambiar?\n0.Nombre\n1.Apellido\n2.Sexo\n3.Cedula\n4. Dia de nacimiento\n5.Mes de nacimiento\n6.Ano de nacimiento\n7.Promedio\n8.Salir del menu\n";
 					cin >> choice;                                                                                          
@@ -127,23 +151,53 @@ main() {
 					case 4:
 						cout << "Ingrese dia de nacimiento del estudiante: \n";
 						cin >> dia_nac;
+						//Para calcular la edad con dia, mes y años
+						if ( dia_act < dia_nac  ){   
+					    	dia_act = dia_act + 30; 
+					        mes_act = mes_act - 1;     
+					    }
+					    if( mes_act < mes_nac ){   
+							mes_act = mes_act + 12;					         
+					        ano_act = ano_act - 1; 					        
+					    }
+					    edad_2 = ano_act - ano_nac;
 						lista_est[z][0] = dia_nac;
+						lista_est[z][3] = edad_2;
 						system("pause");
 						system("cls");
 						continue;
 					case 5:
 						cout << "Introduzca el mes de nacimineto: \n";
 						cin >> mes_nac;
+					
+						if ( dia_act < dia_nac  ) {     
+					        dia_act = dia_act + 30; 
+							mes_act = mes_act - 1;
+					    }
+					    if( mes_act < mes_nac ) {   
+					    	mes_act = mes_act + 12;
+					        ano_act = ano_act - 1; 
+					    }
+					    edad_2 = ano_act - ano_nac;
 						lista_est[z][1] = mes_nac;
+						lista_est[z][3] = edad_2;
 						system("pause");
 						system("cls");
 						continue;
 					case 6:
 						cout << "Introduzca el ano de nacimineto: \n";
 						cin >> ano_nac;
+						if ( dia_act < dia_nac  ){   
+					       	dia_act = dia_act + 30; 
+					        mes_act = mes_act - 1;   
+					    }
+					    if( mes_act < mes_nac ){   
+					        mes_act = mes_act + 12;
+					        ano_act = ano_act - 1;
+					    }	
+					    edad_2 = ano_act - ano_nac;
 						lista_est[z][2] = ano_nac;
-						edad= ano_actual - ano_nac;
-						lista_est[z][3] = edad;
+						lista_est[z][3] = edad_2;
 						system("pause");
 						system("cls");
 						continue;
@@ -259,8 +313,7 @@ main() {
 					continue;
 				default:
 					cout << "Ha introducido mal un caracter.\n";
-					break;
-					
+					break;			
 			}
 		}
 			case 4:
