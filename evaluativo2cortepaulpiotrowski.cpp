@@ -7,7 +7,6 @@ main() {
 	//Se declaran las variables
 		string nombre, apellido, sexo, cedula;
 		int dia_nac, est_num, mes_nac, ano_nac, promedio, ano_actual = 2021, opcion, edad;
-		int  index = 5, index_2 = 4;
 		bool continuar = true;
 		int o=0, z= 0, u = 0;
 		int lista_est[100][100];
@@ -16,15 +15,14 @@ main() {
 	do{
 		cout << "Bienvenido al programa usuario, elija una opcion\n1.Registro de estudiantes\n2.Editar estudiantes\n3.Estadistica\n4.Salir del Programa\n";
 		cin >> opcion;
-		system("cls");
+		system("cls"); 
+			switch(opcion){
+			
+			case 1: 
 		
-	//Se hace una declaracion switch para tomar en cuenta las diferentes opciones
-		switch(opcion){
-			case 1:{
-				//Mensaje de bienvenida e ingreso del numero de estudiantes que desea registrar
 				cout << "Bienvenido a la opcion de Registrar Estudiantes\nPor favor ingrese el numero de estudiantes que desea registrar: \n";
 				cin >> est_num;
-				
+			
 				//Registrar los estudiantes usando un bucle		
 				for(int y = 1; y <= est_num; y++) {
 						cout << "Ingrese nombre del estudiante: \n";
@@ -52,8 +50,9 @@ main() {
 						
 						cout << "Ingrese ano de nacimiento del estudiante: \n";
 						cin >> ano_nac;
-					
+			
 						edad= ano_actual - ano_nac;
+						
 						cout << "Ingrese promedio del estudiante: \n";
 						cin >> promedio;
 
@@ -61,18 +60,18 @@ main() {
 						lista_est[o][0] =dia_nac;
 						lista_est[o][1] =mes_nac;
 						lista_est[o][2] =ano_nac;
-						lista_est[o][3] =edad;
+						lista_est[o][3] =edad; 
 						lista_est[o][4] =promedio;
-					o = o + 1;
-					system("pause");                                                   
+					system("pause");           
       				system("cls");
-				}
+      				o++;
+				}                            
 				
 				cout << "Esta parte ha concluido\n";
 				system("pause");                                                   
       			system("cls"); 
 				
-				continue;}
+				continue;
 			case 2:{
 				//Se muestran los estudiantes con todos sus datos para que se pueda elegir que modificar
 				for (int i=0; i<o; i++){
@@ -91,13 +90,13 @@ main() {
 					system("cls");
 					int choice;
 					//Se escoge la opcion que mas desee
-					cout << "Que desea cambiar?\n0.Nombre\n1.Apellido\n2.Sexo\n3.Cedula\n4.Dia de nacimiento\n5.Mes de nacimiento\n6.Ano de nacimiento\n7.Promedio\n8.Salir del menu\n";
-					cin >> choice;
+					cout << "Que desea cambiar?\n0.Nombre\n1.Apellido\n2.Sexo\n3.Cedula\n4. Dia de nacimiento\n5.Mes de nacimiento\n6.Ano de nacimiento\n7.Promedio\n8.Salir del menu\n";
+					cin >> choice;                                                                                          
 					system("pause");
-					system("cls");
+					system("cls");                                                                                                                                   
 				switch(choice){
 					//Diferentes opciones para modificar los datos del estudiante que se desee
-					case 0:
+					case 0:                                                               
 						cout << "Introduzca el nombre: \n";
 						cin >> nombre;
 						lista_est_string[z][0] = nombre;
@@ -126,7 +125,7 @@ main() {
 						system("cls");
 						continue;
 					case 4:
-						cout << "Introduzca el dia de nacimineto: \n";
+						cout << "Ingrese dia de nacimiento del estudiante: \n";
 						cin >> dia_nac;
 						lista_est[z][0] = dia_nac;
 						system("pause");
@@ -149,29 +148,22 @@ main() {
 						system("cls");
 						continue;
 					case 7:
-						cout << "Introduzca el promedio: \n";
+						cout << "Introduzca el nuevo promedio: \n";
 						cin >> promedio;
 						lista_est[z][4] = promedio;
-						system("pause");
+					 	system("pause");                     
 						system("cls");
-						continue;
+						continue;         
 					case 8:
 						cout << "Ha salido de la opcion.\n";
 						system("pause");
 						system("cls");
 						break;
-					default:
-						cout << "Ha introducido mal un dato\n";
-						system("pause");
-						system("cls");
-						continue;
-				}                                                  
-      			system("cls"); 
-				continue;
+				}
+				                                                  
+				continue;                                                  
 			}
-
-			case 3:{
-				//Se declaran variables para que se mantengan en este case
+			case 3:{                                                  
 				char libre;
 				int average_menor, average_mayor = lista_est[0][4], average_2,average_1, can_h = 0, can_m = 0, contador, contador_2;
 				string can_1, position;
@@ -221,8 +213,8 @@ main() {
 							}
 							
 							}
-								
-
+					
+					//Se imprime el resultado			
 					cout << "El promedio mas alto es de: " << average_mayor << " ";
 					cout << "El estudiante de nombre: " << lista_est_string[contador][0] << " y apellido: " << lista_est_string[contador][1] << endl;
 					cout << "Sexo: " << lista_est_string[contador][2] << "\nCedula: " << lista_est_string[contador][3] << endl;
@@ -241,7 +233,7 @@ main() {
 								contador_2 = i;	
 							}
 							}
-
+					//Se imprime el resultado
 					cout << "El promedio mas bajo es de: " << average_menor << " ";
 					cout << "El estudiante del nombre: " << lista_est_string[contador_2][0] << " y apellido: " << lista_est_string[contador_2][1] << endl;
 					cout << "Sexo: " << lista_est_string[contador_2][2] << "\nCedula: " << lista_est_string[contador_2][3] << endl;
@@ -266,11 +258,11 @@ main() {
 					system("cls");
 					continue;
 				default:
+					cout << "Ha introducido mal un caracter.\n";
 					break;
-				}
-
+					
 			}
-			//Para terminar el programa
+		}
 			case 4:
 				continuar = false;
 				cout << "Ha terminado el programa\n";
@@ -281,7 +273,8 @@ main() {
 				system("pause");                                                   
       			system("cls"); 
 				continue;
-			}	
+			}
+		
 		}while(continuar);
 
 		getch();
