@@ -1,1 +1,0 @@
-int tor[index][k]; //5

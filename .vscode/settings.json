@@ -89,5 +89,6 @@
     "code-runner.fileDirectoryAsCwd": true,
     "files.associations": {
         "iostream": "cpp"
-    }
+    },
+    "code-runner.saveAllFilesBeforeRun": true
 }
