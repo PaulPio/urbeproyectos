@@ -6,4 +6,22 @@
 •	Cuando se agoten todos los números debe indicar que termino y luego si quieren volver a jugar
 */
 
+#include <iostream>
+using namespace std;
+int bingo();
+int numero_azar();
 
+main (){
+
+
+}
+
+
+int bingo(){
+    //Mensaje de Bienvenida
+    cout << "Bienvenido al Bingo user\n";
+    //Declaracion de variables
+    int tabla[5][5];    
+    char letra_tabla[5] = {'B', 'I', 'N', 'G', 'O'};
+
+}
