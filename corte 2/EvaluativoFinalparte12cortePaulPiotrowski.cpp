@@ -92,7 +92,7 @@ int bingo(){
     //Para cambiar a 0 el numero que se teclee
     char opcion;
     do{
-       
+        contador = 0;
         cout << "Desea ingresar un numero? (Y|N)\n";
         cin >> opcion;
         //En caso de que teclee Y
@@ -102,7 +102,18 @@ int bingo(){
         system("cls");
         for(int i=0;i<index;i++){
             for(int j=0;j<index;j++){
-                
+                //En caso de que sean todos los numeros de la tabla 0
+                if (tabla[i][j] == 0){
+                    contador++;
+                    if (contador == 24)
+                    {
+                        cout << "La tabla ha sido completada.\nHas ganado el juego user\n";
+                        system("pause");
+                        system("cls");
+                        opcion = 'N';
+                        proceso = false;
+                    }
+                }
                 if (cambio == tabla[i][j]){
                     tabla[i][j] = 0;
                 }
@@ -125,28 +136,8 @@ int bingo(){
                 else{
                 cout << "| " << tabla[i][j] <<" | ";
                 }  
-               
             }
             cout << endl; 
-        }
-
-        for (int i = 0; i < index; i++)
-        {
-            for (int j = 0; j < index; j++)
-            {
-                 //En caso de que sean todos los numeros de la tabla 0
-                contador = 0;
-                if (cero == tabla[i][j]){
-                    contador++;
-                    }
-                    if (contador == 25)
-                    {
-                        cout << "La tabla ha sido completada.\nHas ganado el juego user\n";
-                        system("pause");
-                        system("cls");
-                        proceso = false;
-                    }
-            }   
         }
         }
         
