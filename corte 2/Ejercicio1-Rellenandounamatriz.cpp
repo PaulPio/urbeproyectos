@@ -1,8 +1,9 @@
-/*1. Hacer un programa para rellenar una matriz pidiendo al usuario el número de filas
+/*1. Hacer un programa para rellenar una matriz pidiendo al usuario el nï¿½mero de filas
 y columnas, Posteriormente mostrar la matriz en pantalla.*/
 
 #include<iostream>
 #include<conio.h>
+#include <ctime>
 
 using namespace std;
 
