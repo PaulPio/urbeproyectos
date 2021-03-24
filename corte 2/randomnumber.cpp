@@ -1,3 +1,4 @@
+    //Programa base para realizar lista con numeros aleatorios
     #include <iostream>
     #include <cstdlib>
     #include <ctime>
@@ -6,29 +7,29 @@
      
     int main(){
      
-        int arreglo[10];
-        int aux = 0;
+        int arreglo[50];
+        int num = 0;
      
-        srand(time(0));
+        srand(time(NULL));
      
-        for(int i = 0; i < 10; i++){
-            aux = (1 + rand() % 100);
+        for(int i = 0; i < 25; i++){
+            num = (1 + rand() % 99);
      
-            int aux2 = 0;
+            int num_2 = 0;
      
-            while(aux2 < i){
+            while(num_2 < i){
      
-                if(aux != arreglo[aux2])
-                    aux2++;
+                if(num != arreglo[num_2])
+                    num_2++;
      
                 else{
-                        aux = (1 + rand() % 100);
-                        aux2 = 0;
+                        num = (1 + rand() % 99);
+                        num_2 = 0;
      
                     }
             }
      
-            arreglo[i] = aux;
+            arreglo[i] = num;
      
             cout << arreglo[i] << "\n";
         }
@@ -40,7 +41,7 @@
      
      
      
-     
+/*  
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
@@ -287,4 +288,4 @@ return "NOT BINGO!!" ;
 
 
 return "BINGO!!" ;
-}
+}*/
