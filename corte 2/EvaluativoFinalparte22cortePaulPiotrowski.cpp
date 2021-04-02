@@ -51,13 +51,14 @@ void ahorcado(){
                     cout << "Elige la palabra con la que se jugara: \n";
                     cin >> elegido;
 
-                    int sizel = elegido.length();
+                    int sizel = elegido.length();//Para tener el numero de caracteres de elegido
                     bool game = true;
                     string pal(sizel, '_'); //Para concantenar el numero de letras de elegido
                     
-                    int m = 0;//intentos fallidos
-                   
+                    int m = 3;//intentos fallidos
+                    system("cls");
                     //Bucle para medir la cantidad de intentos
+                    cout << "\nQuedan " << m << " oportunidades\n";//Para mostrar las oportunidades restantes
                     while(game){
                         
                         cout << pal << endl;    
@@ -67,14 +68,13 @@ void ahorcado(){
                         if(respuesta[0] == elegido[j])//para comparar la resuesta y obtener el resultado
                             {
                             pal[j] = elegido[j];  
-                            
                             } 
-                        
                         }
                         //Para saber si la letra esta en elegido y sumar el contador de los intentos en caso de que no esté
                         if(elegido.find(respuesta) == -1){
-                            m++;
+                            m--;
                         }
+                        cout << "\nQuedan " << m << " oportunidades\n";//Para mostrar las oportunidades restantes
                         //Si hay victoria
                         if(pal == elegido){
                         cout << "Has ganado esta partida";
@@ -82,7 +82,7 @@ void ahorcado(){
                         victorias++;
                     }
                     //Se consume todos los intentos
-                    if(m == 3){
+                    if(m == 0){
                         cout << "Has perdido esta partida";
                         game = false;
                         derrotas++;
@@ -98,8 +98,7 @@ void ahorcado(){
                     //Condicional comparativo para saber si continuar con el programa
                     if (carga == 'N'){
                         cout << "Has terminado el juego.\n";  
-                    }
-                    
+                    }    
                 }          
                 system("pause");
                 system("cls");
