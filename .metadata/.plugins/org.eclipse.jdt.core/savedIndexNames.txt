@@ -1,3 +1,0 @@
-INDEX VERSION 1.131+C:\Users\Richard\Documents\Paul\Paul_estudios\Paul_Urbe\mayo-julio 2021\programacion2\.metadata\.plugins\org.eclipse.jdt.core
-2528832420.index
-3460880079.index
