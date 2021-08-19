@@ -1,0 +1,122 @@
+//Para registrar jugadores
+	public void jugadores() {
+		char lista;
+		int opcion;
+		System.out.println("Bienvenido a la opcion de agregar jugadores, elija una opcion.\na. Cantidad de jugadores");
+		lista = sc.next().charAt(0);
+		System.out.println("Numero de jugadores que desee agregar: ");
+		opcion = sc.nextInt();
+		switch(lista){
+		case 'a':
+			for(int i = 0; i<opcion; i++) {
+				System.out.println("Introduce el nombre del jugador: ");
+				nombre = sc.next();
+				
+				System.out.println("Introduce el apellido del jugador: ");
+				apellido = sc.next();
+			
+				System.out.println("Introduce la edad del jugador: ");
+				edad = sc.nextInt();
+				
+				System.out.println("Introduce el pais del jugador: ");
+				pais = sc.next();
+				
+				System.out.println("Introduce el sueldo del jugador: ");
+				sueldo = sc.nextDouble();
+				
+				System.out.println("Introduce el numero del jugador: ");
+				numero= sc.nextInt();
+				
+				System.out.println("Introduce el pie preferido del jugador: (D|I)");
+				pie_preferido = sc.next();
+				
+				System.out.println("Introduce la posicion del jugador: ");
+				posicion = sc.next();
+				
+				jug = new Jugador(nombre, apellido, edad, sueldo, pais, numero, pie_preferido, posicion);
+				lista_jugadores[i] = jug;
+				contador_jugador++;
+			}
+		}
+		System.out.println("Press Enter To Continue...");
+		new java.util.Scanner(System.in).nextLine();
+
+	}
+	//Para registrar entrenadores
+	public void entrenadores() {
+		char lista;
+		int opcion;
+		System.out.println("Bienvenido a la opcion de agregar entrenadores, elija una opcion.\na. Cantidad de entrenadores");
+		lista = sc.next().charAt(0);
+		System.out.println("Numero de entrenadores que desee agregar: ");
+		opcion = sc.nextInt();
+		switch(lista){
+		case 'a':
+			for(int i = 0; i<opcion; i++) {
+				System.out.println("Introduce el nombre del entrenador: ");
+				nombre = sc.next();
+				
+				System.out.println("Introduce el apellido del entrenador: ");
+				apellido = sc.next();
+			
+				System.out.println("Introduce la edad del entrenador: ");
+				edad = sc.nextInt();
+				
+				System.out.println("Introduce el pais del entrenador: ");
+				pais = sc.next();
+				
+				System.out.println("Introduce el sueldo del entrenador: ");
+				sueldo = sc.nextDouble();
+				
+				System.out.println("Introduce el tipo de entrenador: ");
+				tipo_entrenador= sc.next();
+				
+				
+				ent = new Entrenador(nombre, apellido, edad, sueldo, pais, tipo_entrenador);
+				lista_entrenadores[i] = ent;
+				
+			}
+		}
+		System.out.println("Press Enter To Continue...");
+		new java.util.Scanner(System.in).nextLine();
+
+	}
+	//Para registrar directivos
+	public void directivos() {
+		char lista;
+		int opcion;
+		System.out.println("Bienvenido a la opcion de agregar directivos, elija una opcion.\na. Cantidad de directivos");
+		lista = sc.next().charAt(0);
+		System.out.println("Numero de directivos que desee agregar: ");
+		opcion = sc.nextInt();
+		switch(lista){
+		case 'a':
+			for(int i = 0; i<opcion; i++) {
+				System.out.println("Introduce el nombre del directivo: ");
+				nombre = sc.next();
+				
+				System.out.println("Introduce el apellido del directivo: ");
+				apellido = sc.next();
+			
+				System.out.println("Introduce la edad del directivo: ");
+				edad = sc.nextInt();
+				
+				System.out.println("Introduce el pais del directivo: ");
+				pais = sc.next();
+				
+				System.out.println("Introduce el sueldo del directivo: ");
+				sueldo = sc.nextDouble();
+				
+				System.out.println("Introduce el cargo de directivo: ");
+				cargo = sc.next();
+				
+				
+				dir = new Directivo(nombre, apellido, edad, sueldo, pais, cargo);
+				lista_directivos[i] = dir;
+				
+			}
+		}
+		System.out.println("Press Enter To Continue...");
+		new java.util.Scanner(System.in).nextLine();
+
+	}
